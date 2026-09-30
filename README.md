@@ -2,9 +2,10 @@
 
 Extension Firefox non officielle pour personnaliser l'accueil de l'ENT **Skolengo** (utilisé notamment par ÉCLAT-BFC) : réorganiser les blocs de la page d'accueil et recolorer la barre du haut, sans toucher au reste du site.
 
-> ⚠️ Ce projet n'est ni développé ni affilié à Kosmos/Skolengo, à une académie ou à un rectorat. C'est un outil personnel de personnalisation visuelle, qui ne modifie aucune donnée envoyée au serveur.
+> [!WARNING]
+> Ce projet n'est ni développé ni affilié à Kosmos/Skolengo, à une académie ou à un rectorat. C'est un outil personnel de personnalisation visuelle, qui ne modifie aucune donnée envoyée au serveur.
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 - **Réorganiser les blocs de l'accueil** (Séances du jour, Travail à faire,
   Évaluations, Annonces établissement, etc.) :
@@ -29,8 +30,7 @@ Extension Firefox non officielle pour personnaliser l'accueil de l'ENT **Skoleng
 
 ### Depuis addons.mozilla.org
 
-*(à venir — lien à ajouter ici une fois l'extension publiée/signée par
-Mozilla)*
+*(à venir)*
 
 ### Installation manuelle, en mode développeur
 
@@ -51,7 +51,7 @@ installation permanente sans passer par addons.mozilla.org, il faut soit :
 - utiliser Firefox Developer Edition ou Nightly et désactiver
   `xpinstall.signatures.required` dans `about:config`.
 
-## 🌐 Portails compatibles
+## Portails compatibles
 
 L'extension se déclenche sur les domaines listés dans `manifest.json`
 (`content_scripts[0].matches`) :
@@ -73,10 +73,11 @@ portail **Skolengo** (balise `<meta name="generator" content="Skolengo">`)
 avant de s'activer : ajouter un domaine supplémentaire ici ne fait rien sur
 un site qui n'utilise pas Skolengo.
 
-Pour ajouter ton académie/collectivité, ouvre une issue ou une pull request
+> [!TIP]
+> Pour ajouter ton académie/collectivité, ouvre une issue ou une pull request
 avec le nom de domaine, ou modifie directement `manifest.json`.
 
-## 🔒 Vie privée
+## Vie privée
 
 - Aucune donnée n'est envoyée à un serveur externe : tout reste dans ton
   navigateur, via l'API `storage.local` de l'extension.
@@ -88,7 +89,7 @@ avec le nom de domaine, ou modifie directement `manifest.json`.
 - Code source entièrement lisible dans ce dépôt, sans dépendance externe ni
   minification.
 
-## 🛠️ Structure du projet
+## Structure du projet
 
 ```
 skolengo-ext/
@@ -102,9 +103,9 @@ skolengo-ext/
 Aucune étape de build n'est nécessaire : les fichiers sont chargés tels
 quels par Firefox.
 
-## 🤝 Contribuer
-
-Les retours, issues et pull requests sont bienvenus, notamment pour :
+## Contribuer
+> [!NOTE]
+> Les retours, issues et pull requests sont bienvenus, notamment pour :
 - ajouter le support d'autres portails Skolengo (nouvelles académies/ENT),
 - porter l'extension vers Chrome/Edge (Manifest V3, très proche de celui-ci),
 - améliorer l'accessibilité ou l'ergonomie du mode édition.
