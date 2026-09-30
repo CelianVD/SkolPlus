@@ -1,0 +1,220 @@
+/* Repli : bouton réglages flottant si .header__set2 est introuvable */
+.skolengo-ext-gearbtn--floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999999;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #2d2d2d;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+.skolengo-ext-gearbtn--floating:hover {
+  background: #444;
+}
+
+/* Interrupteur mode édition : simple toggle texte intégré dans la barre du haut */
+.skolengo-ext-headerbtn {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* Repli : si .header__set2 est introuvable sur une page donnée */
+.skolengo-ext-headerbtn--floating {
+  position: fixed;
+  bottom: 76px;
+  right: 20px;
+  z-index: 999999;
+  background: #fff;
+  color: #222;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.skolengo-ext-headerbtn--floating[aria-pressed="true"] {
+  background: #2e7d32;
+  color: #fff;
+}
+
+/* Point d'état du toggle Édition, contrôlé uniquement par notre CSS
+   (pour rester visible même si le site override le fond du bouton) */
+.skolengo-ext-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #999;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.skolengo-ext-headerbtn[aria-pressed="true"] .skolengo-ext-dot {
+  background: #4caf50 !important;
+}
+.skolengo-ext-headerbtn[aria-pressed="true"] {
+  background: rgba(76, 175, 80, 0.35) !important;
+  font-weight: bold;
+}
+
+/* Panneau de réglages */
+#skolengo-ext-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999999;
+  width: 320px;
+  max-height: 65vh;
+  overflow-y: auto;
+  background: #fff;
+  color: #222;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  padding: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+#skolengo-ext-panel h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+#skolengo-ext-panel h3 {
+  margin: 4px 0 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #666;
+}
+#skolengo-ext-panel section label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+#skolengo-ext-panel input[type="color"] {
+  width: 40px;
+  height: 26px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+#skolengo-ext-pick,
+#skolengo-ext-resetcolor,
+#skolengo-ext-pick-hover,
+#skolengo-ext-resethover {
+  width: 100%;
+  margin-top: 6px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#skolengo-ext-targetlist,
+#skolengo-ext-hovertargetlist {
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+  max-height: 120px;
+  overflow-y: auto;
+}
+#skolengo-ext-targetlist li,
+#skolengo-ext-hovertargetlist li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 0;
+  border-bottom: 1px solid #eee;
+}
+#skolengo-ext-targetlist code,
+#skolengo-ext-hovertargetlist code {
+  font-size: 11px;
+  word-break: break-all;
+}
+#skolengo-ext-targetlist button,
+#skolengo-ext-hovertargetlist button {
+  border: none;
+  background: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 1px 6px;
+  flex-shrink: 0;
+}
+#skolengo-ext-panel section + section {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+.skolengo-ext-hint {
+  font-size: 12px;
+  color: #666;
+  margin: 12px 0 0;
+  line-height: 1.4;
+}
+
+/* Mode édition : barre d'outils (▲▼ ⠿ 👁) sur chaque bloc */
+body.skolengo-ext-editing [draggable="true"] {
+  outline: 1px dashed #999;
+  outline-offset: 2px;
+}
+.skolengo-ext-block-toolbar {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 999998;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+.skolengo-ext-movebtn,
+.skolengo-ext-handle,
+.skolengo-ext-hidebtn {
+  color: #fff;
+  font-size: 12px;
+  border: none;
+  background: transparent;
+  padding: 3px 5px;
+  line-height: 1;
+  cursor: pointer;
+}
+.skolengo-ext-handle {
+  cursor: grab;
+  font-size: 15px;
+}
+.skolengo-ext-hidebtn {
+  font-size: 13px;
+}
+.skolengo-ext-movebtn:hover,
+.skolengo-ext-handle:hover,
+.skolengo-ext-hidebtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+.skolengo-ext-dragging {
+  opacity: 0.4;
+}
+.skolengo-ext-hidden-editing {
+  opacity: 0.35;
+  outline: 2px dashed #d9534f !important;
+}
+
+/* Mode pipette (choix d'une zone à colorer) */
+body.skolengo-ext-picking,
+body.skolengo-ext-picking * {
+  cursor: crosshair !important;
+}
+.skolengo-ext-picking-hover {
+  outline: 2px solid #e53935 !important;
+  outline-offset: -2px;
+}

@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "SkolPlus",
+  "version": "0.5.0",
+  "description": "Personnalise l'accueil Skolengo : masquer/réordonner les blocs de l'accueil et changer la couleur de la barre du haut.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "skolplus@local.ext",
+      "strict_min_version": "109.0"
+    }
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.eclat-bfc.fr/*",
+        "*://*.arsene76.fr/*",
+        "*://*.monbureaunumerique.fr/*",
+        "*://*.loire.ent.auvergnerhonealpes.fr/*",
+        "*://*.agora06.fr/*",
+        "*://*.ent27.fr/*",
+        "*://*.ecollege.haute-garonne.fr/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
